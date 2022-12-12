@@ -24,6 +24,9 @@ function getCookies() {
 function setCookie(cookieName, cookieValue) {
     // Le cookie doit être valide 2 jours et doit respecter les normes de sécurité contre les failles CSRF.
     // Votre code ici.
+      this.monCookie = cookieName;
+      this.maValeur = cookieValue;
+      return this.monCookie + " = " + this.maValeur;
 }
 
 
@@ -33,14 +36,16 @@ function setCookie(cookieName, cookieValue) {
  */
 function getCookie(cookieName) {
     // Votre code ici.
+    this.monCookie = cookieName;
+    return this.monCookie;
 }
 
 
 console.log(getCookies());
 
 // FIXME Test de setCookie()
-setCookie('monCookie', 'maValeur');
-console.log(getCookies());
+
+console.log(setCookie('monCookie', 'maValeur'));
 
 // FIXME test de getCookie(param)
-console.log(getCookies('monCookie'));
+console.log(getCookie('monCookie'));
